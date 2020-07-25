@@ -40,6 +40,7 @@
 		D28AD1B9248BB5D4009B584A /* AlbumDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28AD1B8248BB5D4009B584A /* AlbumDetail.swift */; };
 		D2945E1C249C0FC100AE6CA5 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2945E1B249C0FC100AE6CA5 /* Navigation.swift */; };
 		D2945E1E249C249C00AE6CA5 /* SettingsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2945E1D249C249C00AE6CA5 /* SettingsHome.swift */; };
+		D298883924CCE15000544352 /* Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D298883724CCE15000544352 /* Library.xcdatamodeld */; };
 		D29CB1C524A631EB0051BA96 /* CollectionReceived.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CB1C424A631EB0051BA96 /* CollectionReceived.swift */; };
 		D29CB1C724A632520051BA96 /* FullOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CB1C624A632520051BA96 /* FullOverlay.swift */; };
 		D2A449CC249BAECE006E0A12 /* LibraryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A449CB249BAECE006E0A12 /* LibraryOptions.swift */; };
@@ -102,6 +103,7 @@
 		D28AD1B8248BB5D4009B584A /* AlbumDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetail.swift; sourceTree = "<group>"; };
 		D2945E1B249C0FC100AE6CA5 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		D2945E1D249C249C00AE6CA5 /* SettingsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHome.swift; sourceTree = "<group>"; };
+		D298883824CCE15000544352 /* Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Library.xcdatamodel; sourceTree = "<group>"; };
 		D29CB1C424A631EB0051BA96 /* CollectionReceived.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReceived.swift; sourceTree = "<group>"; };
 		D29CB1C624A632520051BA96 /* FullOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullOverlay.swift; sourceTree = "<group>"; };
 		D2A449CB249BAECE006E0A12 /* LibraryOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOptions.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				D2AB846A2481159D008B57F9 /* AppEnvironment.swift */,
 				D288174E248D148E00EB47C2 /* Listen Later.entitlements */,
 				D2AC120E2485A20400C52D9E /* secrets.xcconfig */,
+				D298883724CCE15000544352 /* Library.xcdatamodeld */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				D2C3A0A924A01AEF00AA7266 /* NavBar.swift in Sources */,
 				D23C398E248FD2DF00AD237E /* Welcome.swift in Sources */,
 				D2AC120B24859E2300C52D9E /* AddSourceCardButton.swift in Sources */,
+				D298883924CCE15000544352 /* Library.xcdatamodeld in Sources */,
 				D2C3A0A5249FFEFF00AA7266 /* Home.swift in Sources */,
 				D28AD1B5248BACB2009B584A /* PlaybackLink.swift in Sources */,
 				D288174A248BEABF00EB47C2 /* ShareSheet.swift in Sources */,
@@ -698,6 +702,19 @@
 			productName = HMV;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D298883724CCE15000544352 /* Library.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D298883824CCE15000544352 /* Library.xcdatamodel */,
+			);
+			currentVersion = D298883824CCE15000544352 /* Library.xcdatamodel */;
+			path = Library.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D22155702481114A00A1F04A /* Project object */;
 }
