@@ -25,8 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       fatalError("No Apple Music API Token Found!")
     }
     
+    // Get the managed object context from the shared persistent container.
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     // Create the SwiftUI view that provides the window contents.
     let contentView = Home()
+      .environment(\.managedObjectContext, context)
       .environmentObject(AppEnvironment.global)
     
     // Use a UIHostingController as window root view controller.
@@ -80,6 +84,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
+    
+    // Save changes in the application's managed object context when the application transitions to the background.
+    (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
   }
   
   
