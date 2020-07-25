@@ -23,7 +23,7 @@ struct CollectionLibrary: View {
     set: { if self.app.state.navigation.showCollection { self.app.update(action: NavigationAction.showCollection($0)) } }
     )}
   
-  private var collections: [Collection] {
+  private var collections: [OldCollection] {
     app.state.library.collections
   }
   

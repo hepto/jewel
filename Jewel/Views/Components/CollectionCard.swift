@@ -13,7 +13,7 @@ struct CollectionCard: View {
   
   @EnvironmentObject var app: AppEnvironment
   
-  let collection: Collection
+  let collection: OldCollection
   
   private var collectionArtwork: [URL] {
     var artworkUrls = [URL]()

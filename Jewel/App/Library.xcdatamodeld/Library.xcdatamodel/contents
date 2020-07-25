@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Collection" representedClassName="Collection" syncable="YES" codeGenerationType="class">
+        <attribute name="curator" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="shareLinkLong" optional="YES" attributeType="URI"/>
+        <attribute name="shareLinkShort" optional="YES" attributeType="URI"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="slots" optional="YES" toMany="YES" minCount="8" maxCount="8" deletionRule="Nullify" ordered="YES" destinationEntity="Slot" inverseName="collection" inverseEntity="Slot"/>
+    </entity>
+    <entity name="Slot" representedClassName="Slot" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="playbackLinks" optional="YES" attributeType="Transformable"/>
+        <attribute name="source" optional="YES" attributeType="Transformable"/>
+        <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Collection" inverseName="slots" inverseEntity="Collection"/>
+    </entity>
+    <elements>
+        <element name="Collection" positionX="-615.15625" positionY="-746.55078125" width="128" height="148"/>
+        <element name="Slot" positionX="-320.24609375" positionY="-552.7890625" width="128" height="103"/>
+    </elements>
 </model>

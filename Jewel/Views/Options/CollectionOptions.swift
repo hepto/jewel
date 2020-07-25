@@ -12,7 +12,7 @@ struct CollectionOptions: View {
   
   @EnvironmentObject private var app: AppEnvironment
   
-  private var collection: Collection {
+  private var collection: OldCollection {
     if app.state.navigation.onRotationActive {
       return self.app.state.library.onRotation
     } else {
@@ -137,7 +137,7 @@ struct ShareCollectionButton: View {
     set: { if self.app.state.navigation.showSharing { self.app.update(action: NavigationAction.showSharing($0)) } }
     )}
   
-  var collection: Collection
+  var collection: OldCollection
   
   var body: some View {
     Button(action: {

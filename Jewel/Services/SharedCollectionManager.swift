@@ -41,7 +41,7 @@ class SharedCollectionManager {
     }
   }
   
-  static func generateLongLink(for collection: Collection) -> URL? {
+  static func generateLongLink(for collection: OldCollection) -> URL? {
     var shareableSlots = [ShareableSlot?]()
     
     for slot in collection.slots {
@@ -79,7 +79,7 @@ class SharedCollectionManager {
     }
   }
   
-  static func setShareLinks(for collection: Collection) {
+  static func setShareLinks(for collection: OldCollection) {
     
     AppEnvironment.global.update(action: LibraryAction.invalidateShareLinks(collectionId: collection.id))
     
@@ -160,7 +160,7 @@ class SharedCollectionManager {
   }
   
   static func expandShareableCollection(shareableCollection: ShareableCollection) {
-    let collection = Collection(type: .sharedCollection, name: shareableCollection.collectionName, curator: shareableCollection.collectionCurator)
+    let collection = OldCollection(type: .sharedCollection, name: shareableCollection.collectionName, curator: shareableCollection.collectionCurator)
     
     AppEnvironment.global.update(action: LibraryAction.addCollection(collection: collection))
     

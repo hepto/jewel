@@ -13,7 +13,7 @@ struct ShareSheetLoader: View {
   
   @EnvironmentObject var app: AppEnvironment
   
-  var collection: Collection
+  var collection: OldCollection
   
   var body: some View {
     Group {

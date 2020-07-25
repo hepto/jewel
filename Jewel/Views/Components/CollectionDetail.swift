@@ -14,7 +14,7 @@ struct CollectionDetail: View {
   
   @EnvironmentObject var app: AppEnvironment
   
-  var collection: Collection
+  var collection: OldCollection
   
   private var collectionEditSelection: Binding<Set<Int>> { Binding (
     get: { self.app.state.navigation.collectionEditSelection },
@@ -27,7 +27,7 @@ struct CollectionDetail: View {
       if self.app.state.navigation.showSearch { self.app.update(action: NavigationAction.showSearch($0)) }
   }
     )}
-  private var slots: [Slot] {
+  private var slots: [OldSlot] {
     collection.slots
   }
   private var editable: Bool {

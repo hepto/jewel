@@ -9,7 +9,7 @@
 import Foundation
 import HMV
 
-struct Slot: Identifiable, Codable {
+struct OldSlot: Identifiable, Codable {
   var id = UUID()
   var source: AppleMusicAlbum?
   var playbackLinks: OdesliResponse?

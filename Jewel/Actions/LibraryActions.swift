@@ -10,7 +10,7 @@ import Foundation
 
 func updateLibrary(library: Library, action: LibraryAction) -> Library {
   
-  func extractCollection(collectionId: UUID) -> Collection? {
+  func extractCollection(collectionId: UUID) -> OldCollection? {
     if newLibrary.onRotation.id == collectionId {
       return newLibrary.onRotation
     } else if let collectionIndex = newLibrary.collections.firstIndex(where: { $0.id == collectionId }) {
@@ -19,7 +19,7 @@ func updateLibrary(library: Library, action: LibraryAction) -> Library {
     return nil
   }
   
-  func commitCollection(collection: Collection) {
+  func commitCollection(collection: OldCollection) {
     if collection.id == newLibrary.onRotation.id {
       newLibrary.onRotation = collection
     } else if let collectionIndex = newLibrary.collections.firstIndex(where: { $0.id == collection.id }) {
@@ -51,14 +51,14 @@ func updateLibrary(library: Library, action: LibraryAction) -> Library {
     
   case let .removeSourceFromSlot(slotIndex, collectionId):
     if var collection = extractCollection(collectionId: collectionId) {
-      collection.slots[slotIndex] = Slot()
+      collection.slots[slotIndex] = OldSlot()
       commitCollection(collection: collection)
     }
     
   case let .removeSourcesFromCollection(slotIndexes, collectionId):
     if var collection = extractCollection(collectionId: collectionId) {
       for slotIndex in slotIndexes {
-        collection.slots[slotIndex] = Slot()
+        collection.slots[slotIndex] = OldSlot()
       }
       commitCollection(collection: collection)
     }
@@ -93,7 +93,7 @@ func updateLibrary(library: Library, action: LibraryAction) -> Library {
     newLibrary.collections.insert(newCollection, at: 0)
     
   case .createCollection:
-    let newCollection = Collection(type: .userCollection, name: "New Collection", curator: newLibrary.onRotation.curator)
+    let newCollection = OldCollection(type: .userCollection, name: "New Collection", curator: newLibrary.onRotation.curator)
     newLibrary.collections.insert(newCollection, at: 0)
     
   case let .addCollection(collection):
@@ -150,10 +150,10 @@ enum LibraryAction: AppAction {
   case moveSlot(from: Int, to: Int, collectionId: UUID)
   case invalidateShareLinks(collectionId: UUID)
   case setShareLinks(shareLinkLong: URL, shareLinkShort: URL, collectionId: UUID)
-  case saveOnRotation(collection: Collection)
+  case saveOnRotation(collection: OldCollection)
   case createCollection
-  case addCollection(collection: Collection)
-  case duplicateCollection(collection: Collection)
+  case addCollection(collection: OldCollection)
+  case duplicateCollection(collection: OldCollection)
   case removeCollection(libraryIndex: Int)
   case removeCollections(collectionIds: Set<UUID>)
   case moveCollection(from: Int, to: Int)

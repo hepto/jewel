@@ -14,7 +14,7 @@ struct AlbumDetail: View {
   
   @EnvironmentObject var app: AppEnvironment
   
-  private var slot: Slot {
+  private var slot: OldSlot {
     if app.state.navigation.onRotationActive {
       return app.state.library.onRotation.slots[app.state.navigation.activeSlotIndex]
     } else {
@@ -47,7 +47,7 @@ struct AlbumDetail: View {
   
   struct Compact: View {
     
-    let slot: Slot
+    let slot: OldSlot
     
     var body: some View {
       VStack {
@@ -71,7 +71,7 @@ struct AlbumDetail: View {
   
   struct Regular: View {
     
-    let slot: Slot
+    let slot: OldSlot
     
     var body: some View {
       HStack(alignment: .top) {

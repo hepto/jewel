@@ -11,9 +11,9 @@ import HMV
 
 struct Library: Codable {
   
-  var onRotation: Collection
+  var onRotation: OldCollection
   
-  var collections: [Collection]
+  var collections: [OldCollection]
   var cuedCollection: SharedCollectionManager.ShareableCollection?
   
   enum CodingKeys: CodingKey {

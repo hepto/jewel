@@ -9,15 +9,15 @@
 import Foundation
 import HMV
 
-struct Collection: Identifiable, Codable {
+struct OldCollection: Identifiable, Codable {
   var id = UUID()
   var type: CollectionType
   var name: String
   var curator: String
-  var slots: [Slot] = {
-    var tmpSlots = [Slot]()
+  var slots: [OldSlot] = {
+    var tmpSlots = [OldSlot]()
     for _ in 0..<8 {
-      let slot = Slot()
+      let slot = OldSlot()
       tmpSlots.append(slot)
     }
     return tmpSlots

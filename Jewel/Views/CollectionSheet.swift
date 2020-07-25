@@ -12,7 +12,7 @@ struct CollectionSheet: View {
   
   @EnvironmentObject var app: AppEnvironment
   
-  private var collection: Collection {
+  private var collection: OldCollection {
     if app.state.navigation.onRotationActive {
       return app.state.library.onRotation
     } else {
